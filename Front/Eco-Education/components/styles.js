@@ -40,8 +40,6 @@ export default StyleSheet.create({
     backgroundColor: '#4C75A3', // VK official color
     padding: 12,
     borderRadius: 10,
-    marginBottom: 15,
-    width: '70%', // Decreased button width
     justifyContent: 'center',
     elevation: 4, // Button shadow for modern look
     shadowColor: '#000', // Shadow for iOS
@@ -55,7 +53,6 @@ export default StyleSheet.create({
     backgroundColor: '#0088cc', // Telegram official color
     padding: 12,
     borderRadius: 10,
-    width: '70%', // Decreased button width
     justifyContent: 'center',
     elevation: 4, // Button shadow for modern look
     shadowColor: '#000', // Shadow for iOS

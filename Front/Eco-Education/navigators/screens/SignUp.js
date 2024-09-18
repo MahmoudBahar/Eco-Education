@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import styles from '../../components/styles';
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import styles from "../../components/styles";
 
 export default function SignUpPage() {
   const navigation = useNavigation();
 
   // States to handle form inputs
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [birthdate, setBirthdate] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [birthdate, setBirthdate] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   return (
     <View style={styles.container}>
@@ -59,24 +59,37 @@ export default function SignUpPage() {
       </View>
 
       {/* VK and Telegram buttons */}
-      <TouchableOpacity style={styles.vkButton}>
-        <Image
-          source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg' }}
-          style={styles.icon}
-        />
-        <Text style={styles.buttonText}>Sign up with VK</Text>
-      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "30%",
+        }}
+      >
+        <TouchableOpacity style={styles.vkButton}>
+          <Image
+            source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg",
+            }}
+            style={styles.icon}
+          />
+          <Text style={styles.buttonText}>Login with VK</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.telegramButton}>
-        <Image
-          source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg' }}
-          style={styles.icon}
-        />
-        <Text style={styles.buttonText}>Sign up with Telegram</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.telegramButton}>
+          <Image
+            source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
+            }}
+            style={styles.icon}
+          />
+          <Text style={styles.buttonText}>Login with Telegram</Text>
+        </TouchableOpacity>
+      </View>
 
       {/* Navigate to login */}
-      <TouchableOpacity onPress={() => navigation.navigate('SignInPage')}>
+      <TouchableOpacity onPress={() => navigation.navigate("SignInPage")}>
         <Text style={styles.loginText}>
           You already have an account? Login here
         </Text>
