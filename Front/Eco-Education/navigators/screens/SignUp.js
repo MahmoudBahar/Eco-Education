@@ -74,7 +74,7 @@ export default function SignUpPage() {
             }}
             style={styles.icon}
           />
-          <Text style={styles.buttonText}>Login with VK</Text>
+          <Text style={styles.buttonText}>Signup with VK</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.telegramButton}>
@@ -84,7 +84,7 @@ export default function SignUpPage() {
             }}
             style={styles.icon}
           />
-          <Text style={styles.buttonText}>Login with Telegram</Text>
+          <Text style={styles.buttonText}>Signup with Telegram</Text>
         </TouchableOpacity>
       </View>
 

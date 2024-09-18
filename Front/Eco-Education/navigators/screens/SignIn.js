@@ -34,7 +34,14 @@ export default function SignInPage() {
       </View>
 
       {/* VK and Telegram buttons */}
-      <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'space-between', width: "30%" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "30%",
+        }}
+      >
         <TouchableOpacity style={styles.vkButton}>
           <Image
             source={{
@@ -42,7 +49,7 @@ export default function SignInPage() {
             }}
             style={styles.icon}
           />
-          <Text style={styles.buttonText}>Login with VK</Text>
+          <Text style={styles.buttonText}>Signin with VK</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.telegramButton}>
@@ -52,7 +59,7 @@ export default function SignInPage() {
             }}
             style={styles.icon}
           />
-          <Text style={styles.buttonText}>Login with Telegram</Text>
+          <Text style={styles.buttonText}>Signin with Telegram</Text>
         </TouchableOpacity>
       </View>
 
