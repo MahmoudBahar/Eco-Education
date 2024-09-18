@@ -2,7 +2,7 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SignIn from "./screens/SignIn";
+import SignInPage from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
 import temp from "./screens/temp";
 import { Pressable, Alert, TouchableOpacity, View } from "react-native";
@@ -24,7 +24,7 @@ export default function RootStack() {
       <Stack.Navigator>
         {isLoggedIn ? (
           <Stack.Group>
-            <Stack.Screen name="SignIn" component={SignIn} />
+            <Stack.Screen name="SignIn" component={SignInPage} />
             <Stack.Screen name="SignUp" component={SignUp} />
           </Stack.Group>
         ) : (

@@ -1,0 +1,74 @@
+/* styles.css */
+
+:root {
+  --primary-color: #C0392B; /* Moscow Red */
+  --secondary-color: #2980B9; /* Bright Blue */
+  --tertiary-color: #2ECC71; /* Fresh Green */
+  --accent-color-1: #F39C12; /* Gold */
+  --accent-color-2: #ECF0F1; /* Light Grey */
+  --neutral-color: #34495E; /* Dark Grey */
+  --font-family: 'Arial, sans-serif';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--accent-color-2);
+  color: var(--neutral-color);
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button.secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: var(--neutral-color);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
