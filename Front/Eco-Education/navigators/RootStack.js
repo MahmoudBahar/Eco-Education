@@ -3,7 +3,7 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignInPage from "./screens/SignIn";
-import SignUp from "./screens/SignUp";
+import SignUpPage from "./screens/SignUp";
 import temp from "./screens/temp";
 import { Pressable, Alert, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -28,8 +28,9 @@ export default function RootStack() {
       >
         {isLoggedIn ? (
           <Stack.Group>
-            <Stack.Screen name="SignIn" component={SignInPage} />
-            <Stack.Screen name="SignUp" component={SignUp} />
+            <Stack.Screen name="SignUpPage" component={SignUpPage} />
+            <Stack.Screen name="SignInPage" component={SignInPage} />
+            
           </Stack.Group>
         ) : (
           <Stack.Group>
