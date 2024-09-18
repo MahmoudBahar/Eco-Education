@@ -1,0 +1,45 @@
+### Sign up
+POST http://localhost:3000/api/users/register  
+Content-Type: application/json
+
+{
+  "email": "abdelmoez@gmail.com",
+  "name": "Abdelmoez",
+  "password": "Password@01"
+}
+
+### Sign in 
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "abdelmoez@gmail.com",
+  "password": "Password@01"
+}
+
+### Forget Password
+POST http://localhost:3000/api/users/forgotPassword  
+Content-Type: application/json
+
+{
+  "email": "aloo@jo.op" 
+}
+
+### Reset Password
+PATCH  http://localhost:3000/api/users/resetPassword  
+Content-Type: application/json
+
+{
+  "email": "abdelmoezashraf09@gmail.com",
+  "tempCode": "344179",
+  "password": "paAswordnew.@01"  
+}
+
+### Activate Account
+PATCH http://localhost:3000/api/users/activate  
+Content-Type: application/json
+
+{ 
+  "activationCode": "706194",
+  "_id": "66e97cd481cc916ad1df70cf" 
+}

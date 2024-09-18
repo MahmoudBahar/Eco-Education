@@ -38,13 +38,18 @@ const userSchema = new Schema({
     required: false,
     default: false,
   },
+  role: {
+    type: String,
+    required: true,
+  },
 });
 
 userSchema.statics.signup = async function (
   email,
   password,
   name,
-  activationCode
+  activationCode,
+  role
 ) {
   // validation
   if (!email || !password) {
@@ -74,6 +79,7 @@ userSchema.statics.signup = async function (
       password: hash,
       name,
       activationCode,
+      role,
     },
     {
       new: true,
@@ -110,20 +116,30 @@ userSchema.statics.login = async function (email, password) {
     throw Error('All fields must be filled');
   }
 
+  // Find the user by email
   const user = await this.findOne({ email: email.toLowerCase() });
-  console.log(user);
 
-  if (user == null) {
-    console.log('eq null');
-
+  // If the user does not exist, throw an error
+  if (!user) {
     throw Error('Wrong email or password');
   }
 
+  // Check if the account is activated
+  if (!user.activationStatus) {
+    throw Error(
+      'Account is not activated. Please activate your account to log in.'
+    );
+  }
+
+  // Compare the provided password with the stored hashed password
   const match = await bcrypt.compare(password, user.password);
+
+  // If the password doesn't match, throw an error
   if (!match) {
     throw Error('Wrong email or password');
   }
 
+  // Return the user if everything is valid
   return user;
 };
 

@@ -12,7 +12,7 @@ const createToken = (_id) => {
 };
 
 const createUser = async (req, res, next) => {
-  const { email, password, name } = req.body;
+  const { email, password, name, role } = req.body;
   if (!emailValidator.validate(email)) {
     return res.status(400).json({
       message: 'invalid email address',
@@ -28,7 +28,7 @@ const createUser = async (req, res, next) => {
   try {
     const activationCode = Math.floor(100000 + Math.random() * 900000);
 
-    const user = await User.signup(email, password, name, activationCode);
+    const user = await User.signup(email, password, name, activationCode, role);
     const token = createToken(user._id);
 
     // send activation email

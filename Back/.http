@@ -1,0 +1,45 @@
+### Sign up
+POST http://localhost:5001/api/users/register  
+Content-Type: application/json
+
+{
+  "email": "oh709044@gmail.com",
+  "name": "omar",
+  "password": "Password@01"
+}
+
+### Sign in 
+POST http://localhost:5001/api/users/login
+Content-Type: application/json
+
+{
+  "email": "oh709044@gmail.com",
+  "password": "Password@01"
+}
+
+### Forget Password
+POST http://localhost:5001/api/users/forgotPassword  
+Content-Type: application/json
+
+{
+  "email": "aloo@jo.op" 
+}
+
+### Reset Password
+PATCH  http://localhost:5001/api/users/resetPassword  
+Content-Type: application/json
+
+{
+  "email": "abdelmoezashraf09@gmail.com",
+  "tempCode": "916852",
+  "password": "paAswordnew.@01"  
+}
+
+### Activate Account
+PATCH http://localhost:5001/api/users/activate  
+Content-Type: application/json
+
+{ 
+  "activationCode": "788284",
+  "_id": "66eaf27e6cd756abfe65dcab" 
+}
