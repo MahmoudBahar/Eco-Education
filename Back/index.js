@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-// import { connectDB } from "./db.js";
+import { connectDB } from './db.js';
 
 dotenv.config();
 
@@ -23,13 +23,10 @@ app.use(
   })
 );
 
-// connectDB()
-//   .then(() =>
-//     app.listen(PORT, () => {
-//       console.log(`Server started at ${PORT}`)
-//     }))
-//   .catch((err) => console.log(err));
-
-app.listen(PORT, () => {
-  console.log(`Server started at ${PORT}`);
-});
+connectDB()
+  .then(() =>
+    app.listen(PORT, () => {
+      console.log(`Server started at ${PORT}`);
+    })
+  )
+  .catch((err) => console.log(err));
