@@ -38,13 +38,18 @@ const userSchema = new Schema({
     required: false,
     default: false,
   },
+  role: {
+    type: String,
+    required: true,
+  },
 });
 
 userSchema.statics.signup = async function (
   email,
   password,
   name,
-  activationCode
+  activationCode,
+  role
 ) {
   // validation
   if (!email || !password) {
@@ -74,6 +79,7 @@ userSchema.statics.signup = async function (
       password: hash,
       name,
       activationCode,
+      role,
     },
     {
       new: true,
