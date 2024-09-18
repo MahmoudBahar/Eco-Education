@@ -5,6 +5,8 @@ import cors from 'cors';
 
 import { connectDB } from './db.js';
 
+import userRoutes from './routes/userRoutes.js';
+
 dotenv.config();
 
 const app = express();
@@ -22,6 +24,8 @@ app.use(
     extended: false,
   })
 );
+
+app.use('/api/users', userRoutes);
 
 connectDB()
   .then(() =>
