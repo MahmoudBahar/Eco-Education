@@ -21,7 +21,11 @@ export default function RootStack() {
   console.log("Start");
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         {isLoggedIn ? (
           <Stack.Group>
             <Stack.Screen name="SignIn" component={SignInPage} />
