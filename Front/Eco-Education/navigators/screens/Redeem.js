@@ -55,7 +55,7 @@ const products = [
   {
     id: '7',
     name: 'Eco Yoga Mat',
-    image: 'https://example.com/product7.jpg', // Replace with actual image URL
+    image: 'https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/63/153384/1.jpg?2218', // Replace with actual image URL
     price: 180,
     rating: 4.7,
     description: 'A yoga mat made from natural rubber.',
