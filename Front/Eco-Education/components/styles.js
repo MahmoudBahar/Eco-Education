@@ -5,7 +5,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF', // White background
+    backgroundColor: '#f3f3f3', // White background
   },
   heading: {
     fontSize: 26,
@@ -14,9 +14,10 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   inputContainer: {
-    width: '75%', // Decreased width for a sleeker look
+    width: '50%', // Decreased width for a sleeker look
     padding: 25,
-    backgroundColor: '#FFC55A', // Light orange for modern pop
+    paddingHorizontal: 50,
+    backgroundColor: 'white', // Light orange for modern pop
     borderRadius: 15,
     marginBottom: 25,
     elevation: 6, // For shadow (Android)
@@ -64,6 +65,7 @@ export default StyleSheet.create({
     fontSize: 16,
     color: '#fff',
     marginLeft: 10,
+    textAlign: 'center',
   },
   icon: {
     width: 24,

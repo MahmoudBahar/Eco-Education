@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../../components/styles";
+import translations from "../../components/translations";
 
-export default function SignUpPage() {
+export default function SignUpPage({ language }) {
   const navigation = useNavigation();
 
   // States to handle form inputs
@@ -13,36 +14,39 @@ export default function SignUpPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // Get translations for the current language
+  const t = translations[language] || translations.US; // Default to US if language is not found
+
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Join Explore Moscow</Text>
+      <Text style={styles.heading}>{t.signUpHeading}</Text>
 
       {/* Grouping all inputs in one modern rectangle */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Email"
+          placeholder={t.emailPlaceholder}
           placeholderTextColor="#34495E"
           value={email}
           onChangeText={setEmail}
         />
         <TextInput
           style={styles.input}
-          placeholder="Name"
+          placeholder={t.namePlaceholder}
           placeholderTextColor="#34495E"
           value={name}
           onChangeText={setName}
         />
         <TextInput
           style={styles.input}
-          placeholder="Birthdate (YYYY-MM-DD)"
+          placeholder={t.birthdatePlaceholder}
           placeholderTextColor="#34495E"
           value={birthdate}
           onChangeText={setBirthdate}
         />
         <TextInput
           style={styles.input}
-          placeholder="Password"
+          placeholder={t.passwordPlaceholder}
           placeholderTextColor="#34495E"
           secureTextEntry
           value={password}
@@ -50,12 +54,17 @@ export default function SignUpPage() {
         />
         <TextInput
           style={styles.input}
-          placeholder="Confirm Password"
+          placeholder={t.confirmPasswordPlaceholder}
           placeholderTextColor="#34495E"
           secureTextEntry
           value={confirmPassword}
           onChangeText={setConfirmPassword}
         />
+        <TouchableOpacity
+          style={[styles.vkButton, { width: "30%", alignSelf: "center" }]}
+        >
+          <Text style={[styles.buttonText, { marginLeft: 0 }]}>{t.signUp}</Text>
+        </TouchableOpacity>
       </View>
 
       {/* VK and Telegram buttons */}
@@ -64,7 +73,7 @@ export default function SignUpPage() {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          width: "30%",
+          width: "40%",
         }}
       >
         <TouchableOpacity style={styles.vkButton}>
@@ -74,7 +83,7 @@ export default function SignUpPage() {
             }}
             style={styles.icon}
           />
-          <Text style={styles.buttonText}>Signup with VK</Text>
+          <Text style={styles.buttonText}>{t.signUpWithVK}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.telegramButton}>
@@ -84,15 +93,13 @@ export default function SignUpPage() {
             }}
             style={styles.icon}
           />
-          <Text style={styles.buttonText}>Signup with Telegram</Text>
+          <Text style={styles.buttonText}>{t.signUpWithTelegram}</Text>
         </TouchableOpacity>
       </View>
 
       {/* Navigate to login */}
       <TouchableOpacity onPress={() => navigation.navigate("SignInPage")}>
-        <Text style={styles.loginText}>
-          You already have an account? Login here
-        </Text>
+        <Text style={styles.loginText}>{t.signInPrompt}</Text>
       </TouchableOpacity>
     </View>
   );
